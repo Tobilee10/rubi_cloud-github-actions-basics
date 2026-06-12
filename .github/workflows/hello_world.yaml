@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Say hello
-        run: echo "Hello World"
+        run: echo "Hello World, my first workflow from rubi_cloud-github-actions-basics repository!"
