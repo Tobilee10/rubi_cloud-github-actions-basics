@@ -1,12 +1,20 @@
 name: Hello World
 
+# set event or trigger syntax: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#about-yaml-syntax-for-github-actions
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # allows you to trigger the workflow manually from the GitHub Actions tab in your repository
+
+# defines jobs and step syntax
 
 jobs:
-  print-hello-world:
-    runs-on: ubuntu-latest
 
+# test, build, deploy, etc. are examples of job names. You can name it anything you want.
+  print-hello-world:
+
+  # defines the runner or environment where the job will execute. You can choose from various options like ubuntu-latest, windows-latest, macos-latest, etc.
+    runs-on: ubuntu-latest
+  
+  # defines the steps to be executed in the job. Each step can run a command or an action.
     steps:
       - name: Say hello
         run: echo "Hello World, my first workflow from rubi_cloud-github-actions-basics repository!"
