@@ -8,9 +8,9 @@ jobs:
     runs-on : ubuntu-latest
     
     defaults:
-    run:
-      working-directory: ./cron-example
-      
+      run:
+        working-directory: ./cron-example
+
     steps:
       - uses: actions/checkout@v2
 
