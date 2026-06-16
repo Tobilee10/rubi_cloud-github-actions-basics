@@ -3,7 +3,11 @@ name: Create a comment on new issues
 on: 
   issues:
     types: [opened]
-
+# Grants necessary writes permissions to createcomments
+permissions:
+  issues: write
+  contents: read
+  
 jobs:
   comment-with-action:
     runs-on: ubuntu-latest
