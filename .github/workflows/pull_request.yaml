@@ -1,11 +1,13 @@
 name: Pull Request
 
 on:
-  
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  pull-request:
+  pull-request-job:
     runs-on : ubuntu-latest
     
     defaults:
@@ -13,18 +15,20 @@ jobs:
         working-directory: ./typescript-project
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+      - uses: actions/checkout@v4
 
       # Setup Nodejs
       - name: Setup Node.js 16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "16.x"
-          cache: 'npm'
+          cache: 'yarn'
+          cache-dependency-path: ./typescript-project/yarn.lock
 
       # Install Yarn
-      - name: Install Yarn
-        run: npm install --global yarn
+      # - name: Install Yarn
+      #   run: npm install --global yarn
 
       #Install dependencies
       - name: Install dependencies
