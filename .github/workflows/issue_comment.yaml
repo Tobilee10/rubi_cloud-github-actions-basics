@@ -15,6 +15,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.issue.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             This is a multi-line test comment
             - With GitHub **Markdown** :sparkles:
