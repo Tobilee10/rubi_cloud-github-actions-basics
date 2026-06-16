@@ -1,43 +1,43 @@
-# name: Pull Request
+name: Pull Request
 
-# on:
+on:
   
-#   workflow_dispatch:
+  workflow_dispatch:
 
-# jobs:
-#   pull-request::
-#     runs-on : ubuntu-latest
+jobs:
+  pull-request::
+    runs-on : ubuntu-latest
     
-#     defaults:
-#       run:
-#         working-directory: ./typescript-project
+    defaults:
+      run:
+        working-directory: ./typescript-project
 
-#     steps:
-#       - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-#       # Setup Nodejs
-#       - name: Setup Node.js 16
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: "16.x"
-#           cache: 'npm'
+      # Setup Nodejs
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          cache: 'npm'
 
-#       # Install Yarn
-#       - name: Install Yarn
-#         run: npm install --global yarn
+      # Install Yarn
+      - name: Install Yarn
+        run: npm install --global yarn
 
-#       #Install dependencies
-#       - name: Install dependencies
-#         run: yarn install --frozen-lockfile
+      #Install dependencies
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       
-#       # Run linting
-#       - name: Run linting
-#         run: yarn lint
+      # Run linting
+      - name: Run linting
+        run: yarn lint
       
-#       # compile the code
-#       - name: Build project
-#         run: yarn build
+      # compile the code
+      - name: Build project
+        run: yarn build
 
-#       # Run tests
-#       - name: Run tests
-#         run: yarn test
+      # Run tests
+      - name: Run tests
+        run: yarn test
