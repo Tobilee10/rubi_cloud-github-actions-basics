@@ -14,6 +14,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v5
         with:
+          repository: ${{ github.repository }}
           issue-number: ${{ github.event.issue.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
