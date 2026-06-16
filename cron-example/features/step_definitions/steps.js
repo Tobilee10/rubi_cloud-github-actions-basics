@@ -1,9 +1,9 @@
 // steps.js
 const pactum = require('pactum');
-const {settings} = require('pactum');
+
 const { Given, When, Then, Before } = require('@cucumber/cucumber');
 
-settings.setRequestTimeout(10000);
+
 
 let spec = pactum.spec();
 
