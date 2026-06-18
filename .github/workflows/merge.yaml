@@ -8,9 +8,12 @@ on:
       - 'typescript-project/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   merge-job:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     
     defaults:
       run:
